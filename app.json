@@ -1,0 +1,7 @@
+{
+  "name": "API.AI FAQ sample",
+  "description": "API.AI FAQ sample",
+  "repository": "https://github.com/svet4/faq-sample",
+  "logo": "http://xvir.github.io/img/apiai.png",
+  "keywords": ["api.ai", "natural language"]
+}

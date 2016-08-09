@@ -29,13 +29,13 @@ def webhook():
 
 def makeWebhookResult(req):
 
-    img_base = "https://raw.githubusercontent.com/svet4/faq-sample/master/img/"
+    #img_base = "https://raw.githubusercontent.com/svet4/faq-sample/master/img/"
 
     if req.get("result").get("action") == "topics.authentication":
     
-        speech = "You can find your *authentication tokens* in your agent settings > General > API Keys. \n Read more here: <a href='https://docs.api.ai/docs/authentication' target='_blank'>https://docs.api.ai/docs/authentication</a>."
+        speech = "You can find your *authentication tokens* in your agent settings > General > API Keys. \n Read more here: https://docs.api.ai/docs/authentication."
 
-        pic_url = img_base + "access_tokens.png"
+        #pic_url = img_base + "access_tokens.png"
 
         print("Response:")
         print(speech)
@@ -45,7 +45,7 @@ def makeWebhookResult(req):
         "attachments": [
             {
 
-                "image_url": pic_url
+                "image_url": "https://raw.githubusercontent.com/svet4/faq-sample/master/img/access_tokens.png"
             }
         ]
     }

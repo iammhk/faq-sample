@@ -44,11 +44,11 @@ def makeWebhookResult(req):
         "text": speech,
         "attachments": [
             {
-
+                "text": "To go to your agent settings, click on the gear button:",
                 "image_url": "https://raw.githubusercontent.com/svet4/faq-sample/master/img/access_tokens.png"
             }
         ]
-    }
+        }
 
 
         return {

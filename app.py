@@ -33,19 +33,28 @@ def makeWebhookResult(req):
 
     if req.get("result").get("action") == "topics.authentication":
     
-        speech = "You can find your authentication tokens in your agent settings > General > API Keys. Read more here: https://docs.api.ai/docs/authentication."
-
-        display_text = "You can find your authentication tokens in your agent settings > General > API Keys. Read more here: <a href='https://docs.api.ai/docs/authentication' target='_blank'>https://docs.api.ai/docs/authentication</a>."
+        speech = "You can find your *authentication tokens* in your agent settings > General > API Keys. \n Read more here: <a href='https://docs.api.ai/docs/authentication' target='_blank'>https://docs.api.ai/docs/authentication</a>."
 
         pic_url = img_base + "access_tokens.png"
 
         print("Response:")
         print(speech)
 
+        slack_message = {
+        "text": speech,
+        "attachments": [
+            {
+
+                "image_url": pic_url
+            }
+        ]
+    }
+
+
         return {
-        "speech": speech,
-        "displayText": speech,
-        "data": {"pic": pic_url},
+        #"speech": speech,
+        #"displayText": speech,
+        "data": {"slack": slack_message},
         # "contextOut": [],
         "source": "apiai-support-bot"
     }
